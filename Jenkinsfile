@@ -3,8 +3,7 @@ pipeline {
     stages {
 
    stage('git checkout') {
-       checkout([$class: 'GitSCM', branches: [[name: '${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], subm
-oduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/yangyang4807/jenkins.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/yangyang4807/jenkins.git']]])
    }
    stage('code copy') {
         sh '''rm -rf ${WORKSPACE}/.git
